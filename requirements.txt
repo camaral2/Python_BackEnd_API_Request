@@ -19,6 +19,7 @@ pylint==3.3.6
 pytest==8.3.5
 PyYAML==6.0.2
 requests==2.32.3
+requests-mock==1.12.1
 tomlkit==0.13.2
 urllib3==2.4.0
 virtualenv==20.30.0
