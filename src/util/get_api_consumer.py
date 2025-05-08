@@ -2,9 +2,9 @@ from collections import namedtuple
 from typing import Type, Tuple, Dict
 import requests
 from src.errors import HttpRequestError
+from src.data.interfaces.get_api_consumer import GetApiConsumerInterface
 
-
-class GetApiConsumer:
+class GetApiConsumer(GetApiConsumerInterface):
     """Get info API"""
 
     def __init__(self) -> None:
