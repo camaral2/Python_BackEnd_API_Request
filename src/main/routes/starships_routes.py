@@ -5,6 +5,9 @@ from src.validators.get_starships_in_pagination_validator import (
 )
 
 from src.main.adapters.request_adapter import request_adapter
+from src.main.composers.get_starships_in_pagination_composers import (
+    get_starships_in_pagination_composer,
+)
 
 startships_routes = APIRouter()
 
@@ -22,8 +25,13 @@ async def get_starships_in_pagination(request: RequestFastApi):
 
     try:
         get_pagination_validator(request)
-        await request_adapter(request, print)
+        controller = get_starships_in_pagination_composer()
 
-        return {"Ola": "Mundo"}
+        resposta = await request_adapter(request, controller.handle)
+
+        return JSONResponse(
+            status_code=resposta["status_code"], content={"data": resposta["data"]}
+        )
+
     except Exception as e:
-        return JSONResponse(status_code=422, content=e)
+        return JSONResponse(status_code=422, content=e.message)

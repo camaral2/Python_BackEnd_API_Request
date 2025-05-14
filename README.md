@@ -28,7 +28,7 @@ Python_BackEnd_API_Request/
 │   ├── domain/          # Integrações com APIs externas
 │   ├── errors/          # Modelos e validações com Pydantic
 │   ├── util/            # Configurações e Consumers
-│   └── main.py          # Inicialização da aplicação
+│   └── main/            # Aplicação
 ├── tests/               # Testes automatizados
 ├── requirements.txt     # Dependências do projeto
 └── README.md
@@ -59,8 +59,8 @@ Python_BackEnd_API_Request/
    ```
 
 5. Acesse a documentação interativa:
-   - Swagger: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-   - Redoc: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
+   - Swagger: [http://127.0.0.1:8000/docs](http://127.0.0.1:8001/docs)
+   - Redoc: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8001/redoc)
 
 ## 📌 Notas
 
