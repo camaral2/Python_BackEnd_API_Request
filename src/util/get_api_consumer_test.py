@@ -36,3 +36,42 @@ def test_get_starships_http_error(requests_mock):
     except HttpRequestError as error:
         assert error.message is not None
         assert error.status_code is not None
+
+
+def test_get_starships_information(requests_mock):
+    """Testing get_starships_information method"""
+
+    startship_id = 9
+
+    requests_mock.get(
+        f"https://swapi.dev/api/starships/{startship_id}",
+        status_code=200,
+        json={"name": "something", "model": "thing", "MGL": 123},
+    )
+
+    api_consumer = GetApiConsumer()
+
+    starship_resp = api_consumer.get_starships_information(starship_id=startship_id)
+
+    assert starship_resp.request.method == "GET"
+    assert "MGL" in starship_resp.response
+
+def test_get_starships_information_error(requests_mock):
+    """Test error in test_get_starships_information_error"""
+
+    startship_id = 9
+
+    requests_mock.get(
+        f"https://swapi.dev/api/starships/{startship_id}",
+        status_code=404,
+        json={"detail": "something"},
+    )
+    api_consumer = GetApiConsumer()
+
+    try:
+        api_consumer.get_starships_information(starship_id=startship_id)
+
+        assert True is False
+    except HttpRequestError as error:
+        assert error.message is not None
+        assert error.status_code is not None

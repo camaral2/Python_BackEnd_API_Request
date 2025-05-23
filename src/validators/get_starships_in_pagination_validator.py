@@ -11,7 +11,6 @@ def get_pagination_validator(request: any):
     query_param_validator = Validator({"page": {"type": "string", "required": True}})
 
     response = query_param_validator.validate(request.query_params)
-    print(response)
 
     if response is False:
         raise HttpUnprocessableEntityError(query_param_validator.errors)

@@ -59,8 +59,8 @@ Python_BackEnd_API_Request/
    ```
 
 5. Acesse a documentação interativa:
-   - Swagger: [http://127.0.0.1:8000/docs](http://127.0.0.1:8001/docs)
-   - Redoc: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8001/redoc)
+   - Swagger: [http://127.0.0.1:8001/docs](http://127.0.0.1:8001/docs)
+   - Redoc: [http://127.0.0.1:8001/redoc](http://127.0.0.1:8001/redoc)
 
 ## 📌 Notas
 
